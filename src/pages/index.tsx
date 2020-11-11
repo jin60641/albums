@@ -1,21 +1,20 @@
 import React, { useMemo } from 'react';
 
-import { useScrollRestoration } from "gatsby"
-
-import Link from '../components/Link';
-import Image from '../components/Image';
-import Layout from '../components/Layout';
-import SEO from '../components/SEO';
-import data from '../constants/data.json';
+import { useScrollRestoration } from 'gatsby';
 
 import Coverflow from '../components/Coverflow';
+import Image from '../components/Image';
+import Layout from '../components/Layout';
+import Link from '../components/Link';
+import SEO from '../components/SEO';
+import data from '../constants/data.json';
 
 const INDEX = 10;
 
 const IndexPage: React.FC = (props) => {
-  const ulScrollRestoration = useScrollRestoration(`page-component-ul-list`)
+  const ulScrollRestoration = useScrollRestoration('page-component-ul-list');
   const randoms = useMemo<number[]>(() => Array.from(Array(INDEX)).reduce((arr, _, i) => {
-    while(true) {
+    while (true) {
       const num = Math.floor(Math.random() * data.length);
       if (!arr.includes(num)) {
         arr[i] = num;
@@ -45,9 +44,7 @@ const IndexPage: React.FC = (props) => {
           ))}
         </Coverflow>
         <div
-          style={{
-            textAlign: 'center'
-          }}
+          style={{ textAlign: 'center' }}
         >
           {data.map((row, i) => (
             <Link
@@ -55,7 +52,7 @@ const IndexPage: React.FC = (props) => {
               to={`/view/${row.artist}-${row.album}`}
             >
               <div
-                style={{ width: 300, height: 300, display: 'inline-block', verticalAlign: 'top'}}
+                style={{ width: 300, height: 300, display: 'inline-block', verticalAlign: 'top' }}
               >
                 <Image
                   data-to={`/view/${row.artist}-${row.album}`}
@@ -68,6 +65,6 @@ const IndexPage: React.FC = (props) => {
       </div>
     </Layout>
   );
-}
+};
 
 export default IndexPage;

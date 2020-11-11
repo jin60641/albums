@@ -3,7 +3,7 @@ const path = require('path');
 
 const PATH = path.resolve(__dirname, '..', 'src', 'images');
 const dirs = fs.readdirSync(PATH);
-dirs.forEach(dir => {
+dirs.forEach((dir) => {
   const subDir = path.resolve(PATH, dir);
   const files = fs.readdirSync(subDir);
   files.forEach((file, i) => {
