@@ -28,7 +28,7 @@ const IndexPage: React.FC = (props) => {
       <SEO title='Home' />
       <div ref={ulScrollRestoration.ref as any} onScroll={ulScrollRestoration.onScroll} style={{ overflow: 'auto', height: '100vh' }}>
         <Coverflow
-          height={600}
+          height='50vw'
           displayQuantityOfSide={2}
           active={5}
           navigation={false}
