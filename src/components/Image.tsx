@@ -11,7 +11,7 @@ const Image: React.FC<Props> = ({ src }) => (
   <StaticQuery
     query={graphql`
       query {
-        images: allFile {
+        images: allFile(filter: { relativePath: { regex: "/.*\/0.jpg$/" } } ) {
           edges {
             node {
               relativePath

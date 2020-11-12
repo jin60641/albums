@@ -3,7 +3,6 @@ html {
   -webkit-text-size-adjust: 100%;
   font: 112.5%/1.45em georgia, serif, sans-serif;
   box-sizing: border-box;
-  overflow-y: scroll;
 }
 body {
   margin: 0;
@@ -51,6 +50,7 @@ template {
   display: none;
 }
 a {
+  text-decoration: none;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
 }

@@ -52,12 +52,10 @@ class Coverflow extends Component {
     currentFigureScale: PropTypes.number,
     otherFigureScale: PropTypes.number,
     active: PropTypes.number,
-    media: PropTypes.any,
     classes: PropTypes.object,
     className: PropTypes.string,
     infiniteScroll: PropTypes.bool,
     width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   };
 
   static defaultProps = {
@@ -70,17 +68,14 @@ class Coverflow extends Component {
     currentFigureScale: 1.5,
     otherFigureScale: 0.8,
     active: 0,
-    media: {},
     infiniteScroll: false,
     width: 'auto',
-    height: 'auto',
   };
 
   state = {
     current: ~~(React.Children.count(this.props.children) / 2),
     move: 0,
     width: this.props.width,
-    height: this.props.height,
     timer: null,
   };
 
@@ -138,7 +133,6 @@ class Coverflow extends Component {
     const center = this._center();
     let state = {
       width: this.refNode.current.offsetWidth,
-      height: this.refNode.current.offsetHeight,
     };
     const baseWidth = state.width / (displayQuantityOfSide * 2 + 1);
     let activeImg = typeof active === 'number' ? active : this.props.active;
@@ -156,8 +150,8 @@ class Coverflow extends Component {
   }
 
   render() {
-    const { enableScroll, navigation, className, classes, infiniteScroll, media } = this.props;
-    const { width, height, current } = this.state;
+    const { enableScroll, navigation, className, classes, infiniteScroll } = this.props;
+    const { width, current } = this.state;
     const renderPrevBtn = infiniteScroll ? true : current > 0;
     const renderNextBtn = infiniteScroll ? true : current < this.props.children.length - 1;
     return (
@@ -168,9 +162,6 @@ class Coverflow extends Component {
         <StyleRoot>
           <div
             className={`${className} container`}
-            style={
-              Object.keys(media).length !== 0 ? media : { ...classes, width: typeof width === 'string' ? width : `${width}px`, height: typeof height === 'string' ? height : `${height}px` }
-        }
             onTouchStart={this._handleTouchStart.bind(this)}
             onTouchMove={this._handleTouchMove.bind(this)}
             onKeyDown={this._keyDown.bind(this)}
