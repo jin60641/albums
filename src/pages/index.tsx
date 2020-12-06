@@ -1,18 +1,35 @@
 import React, { useMemo, useCallback, useEffect } from 'react';
 
+import qs from 'query-string';
 import styled from 'styled-components';
+import { PageProps } from 'gatsby';
 
 import Coverflow from '../components/Coverflow';
 import Image from '../components/Image';
 import Layout from '../components/Layout';
 import Link from '../components/Link';
 import SEO from '../components/SEO';
-import data from '../constants/data.json';
+import dataJson from '../constants/data.json';
 
 const INDEX = 10;
 
-const IndexPage: React.FC = (props) => {
+const IndexPage: React.FC<PageProps> = ({ location: { search } }) => {
+  const data = useMemo(() => {
+    if (!search.length) {
+      return dataJson;
+    }
+    const query = qs.parse(search);
+    return dataJson.filter(row => 
+      Object.entries(query).every(([key, value]) => (
+        `${row[key as keyof typeof row]}` === value
+      ))
+    );
+  }, [search]);
+
   const randoms = useMemo<number[]>(() => Array.from(Array(INDEX)).reduce((arr, _, i) => {
+    if (search.length) {
+      return [];
+    }
     while (true) {
       const num = Math.floor(Math.random() * data.length);
       if (!arr.includes(num)) {
@@ -20,29 +37,31 @@ const IndexPage: React.FC = (props) => {
         return arr;
       }
     }
-  }, []), []);
+  }, []), [data.length, search]);
 
   return (
     <Layout>
       <SEO title='Home' />
-        <Coverflow
-          displayQuantityOfSide={2}
-          active={5}
-          navigation={false}
-          enableScroll={false}
-          enableHeading={false}
-        >
-          {randoms.map((num, i) => (
-            <Image
-              key={`Home-Coverflow-${num}`}
-              data-to={`/view/${data[num].artist}-${data[num].album}`}
-              src={`music/${num}/0.jpg`}
-            />
-          ))}
-        </Coverflow>
+        {!search.length && (
+          <Coverflow
+            displayQuantityOfSide={2}
+            active={5}
+            navigation={false}
+            enableScroll={false}
+            enableHeading={false}
+          >
+            {randoms.map((num) => (
+              <Image
+                key={`Home-Coverflow-${num}`}
+                data-to={`/view/${data[num].artist}-${data[num].album}`}
+                src={`music/${num}/0.jpg`}
+              />
+            ))}
+          </Coverflow>
+        )}
         <CardWrap>
-          {data.map(({ artist, album }, i) => (
-            <Card key={`Home-Card-${artist}-${album}-${i}`}>
+          {data.map(({ artist, album, id }) => (
+            <Card key={`Home-Card-${artist}-${album}-${id}`}>
               <Link
                 to={`/view/${artist}-${album}`}
               >
@@ -50,7 +69,7 @@ const IndexPage: React.FC = (props) => {
                 >
                   <Image
                     data-to={`/view/${artist}-${album}`}
-                    src={`music/${i}/0.jpg`}
+                    src={`music/${id}/0.jpg`}
                   />
                 </CardImage>
                 <CardText>
