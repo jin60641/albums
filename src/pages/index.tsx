@@ -42,23 +42,25 @@ const IndexPage: React.FC<PageProps> = ({ location: { search } }) => {
   return (
     <Layout>
       <SEO title='Home' />
-        {!search.length && (
-          <Coverflow
-            displayQuantityOfSide={2}
-            active={5}
-            navigation={false}
-            enableScroll={false}
-            enableHeading={false}
-          >
-            {randoms.map((num) => (
-              <Image
-                key={`Home-Coverflow-${num}`}
-                data-to={`/view/${data[num].artist}-${data[num].album}`}
-                src={`music/${num}/0.jpg`}
-              />
-            ))}
-          </Coverflow>
-        )}
+        <div key={search}>
+          {!search.length ? (
+            <Coverflow
+              displayQuantityOfSide={2}
+              active={5}
+              navigation={false}
+              enableScroll={false}
+              enableHeading={false}
+            >
+              {randoms.map((num) => (
+                <Image
+                  key={`Home-Coverflow-${num}`}
+                  data-to={`/view/${data[num].artist}-${data[num].album}`}
+                  src={`music/${num}/0.jpg`}
+                />
+              ))}
+            </Coverflow>
+          ) : null}
+        </div>
         <CardWrap>
           {data.map(({ artist, album, id }) => (
             <Card key={`Home-Card-${artist}-${album}-${id}`}>
