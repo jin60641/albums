@@ -18,7 +18,10 @@ const isWindow = typeof window !== 'undefined';
 
 const SecondPage: React.FC<Props> = ({ pageContext: { artist, album, rowId, photoCount } }) => (
   <Layout>
-    <SEO title={`${artist} - ${album}`} />
+    <SEO
+      title={`${artist} - ${album}`}
+      image={`music/${rowId}/0.jpg`}
+    />
     {Array.from(Array(photoCount)).map((_, i) => (i === 0 ? (
       <div
         key={`View-${rowId}-${i}`}
