@@ -41,7 +41,9 @@ const SecondPage: React.FC<Props> = ({ pageContext: { artist, album, rowId, phot
         <img src={require(`../images/music/${rowId}/${i}.jpg`)} />
       </div>
     )))}
-    <Link to={isWindow ? (window as any).previousPath : '/'}>Go back to the homepage</Link>
+    <Link to={isWindow ? ((window as any).previousPath || '/') : '/'}>
+      Go back to the homepage
+    </Link>
   </Layout>
 );
 

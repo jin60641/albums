@@ -6,10 +6,15 @@
 
 // You can delete this file if you're not using it
 
+
+const removeTrailingSlash = (url) => url.replace('/\/$/', '');
+
 exports.onRouteUpdate = () => {
   window.locations = window.locations || [document.referrer];
-  if (window.locations[locations.length - 1] !== window.location.href) {
-    window.locations.push(window.location.href);
+  const href = removeTrailingSlash(window.location.href);
+  const before = removeTrailingSlash(window.locations[locations.length - 1]);
+  if (before !== href) {
+    window.locations.push(href);
   }
   window.previousPath = (window.locations[locations.length - 2] || '').replace(window.location.origin, '');
 }
