@@ -14,6 +14,8 @@ interface Props {
   }
 }
 
+const isWindow = typeof window !== 'undefined';
+
 const SecondPage: React.FC<Props> = ({ pageContext: { artist, album, rowId, photoCount } }) => (
   <Layout>
     <SEO title={`${artist} - ${album}`} />
@@ -36,7 +38,7 @@ const SecondPage: React.FC<Props> = ({ pageContext: { artist, album, rowId, phot
         <img src={require(`../images/music/${rowId}/${i}.jpg`)} />
       </div>
     )))}
-    <Link to='/'>Go back to the homepage</Link>
+    <Link to={isWindow ? (window as any).previousPath : '/'}>Go back to the homepage</Link>
   </Layout>
 );
 

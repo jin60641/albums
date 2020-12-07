@@ -27,40 +27,33 @@ const IndexPage: React.FC<PageProps> = ({ location: { search } }) => {
   }, [search]);
 
   const randoms = useMemo<number[]>(() => Array.from(Array(INDEX)).reduce((arr, _, i) => {
-    if (search.length) {
-      return [];
-    }
     while (true) {
-      const num = Math.floor(Math.random() * data.length);
+      const num = Math.floor(Math.random() * dataJson.length);
       if (!arr.includes(num)) {
         arr[i] = num;
         return arr;
       }
     }
-  }, []), [data.length, search]);
+  }, []), []);
 
   return (
     <Layout>
       <SEO title='Home' />
-        <div key={search}>
-          {!search.length ? (
-            <Coverflow
-              displayQuantityOfSide={2}
-              active={5}
-              navigation={false}
-              enableScroll={false}
-              enableHeading={false}
-            >
-              {randoms.map((num) => (
-                <Image
-                  key={`Home-Coverflow-${num}`}
-                  data-to={`/view/${data[num].artist}-${data[num].album}`}
-                  src={`music/${num}/0.jpg`}
-                />
-              ))}
-            </Coverflow>
-          ) : null}
-        </div>
+        <Coverflow
+          displayQuantityOfSide={2}
+          active={5}
+          navigation={false}
+          enableScroll={false}
+          enableHeading={false}
+        >
+          {randoms.map((num) => (
+            <Image
+              key={`Home-Coverflow-${num}`}
+              data-to={`/view/${dataJson[num].artist}-${dataJson[num].album}`}
+              src={`music/${num}/0.jpg`}
+            />
+          ))}
+        </Coverflow>
         <CardWrap>
           {data.map(({ artist, album, id }) => (
             <Card key={`Home-Card-${artist}-${album}-${id}`}>
