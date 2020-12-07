@@ -20,6 +20,7 @@ jobs:
     - name: build
       run: |
         yarn
+        yarn clean
         yarn build
 
     # Fix timestamps

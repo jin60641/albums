@@ -20,7 +20,7 @@ const SecondPage: React.FC<Props> = ({ pageContext: { artist, album, rowId, phot
   <Layout>
     <SEO
       title={`${artist} - ${album}`}
-      image={`music/${rowId}/0.jpg`}
+      image={require(`../images/music/${rowId}/0.jpg`)}
     />
     {Array.from(Array(photoCount)).map((_, i) => (i === 0 ? (
       <div
