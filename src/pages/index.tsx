@@ -28,13 +28,13 @@ const IndexPage: React.FC<PageProps> = ({ location: { search } }) => {
 
   const randoms = useMemo<number[]>(() => Array.from(Array(INDEX)).reduce((arr, _, i) => {
     while (true) {
-      const num = Math.floor(Math.random() * dataJson.length);
+      const num = Math.floor(Math.random() * data.length);
       if (!arr.includes(num)) {
         arr[i] = num;
         return arr;
       }
     }
-  }, []), []);
+  }, []), [data, search]);
 
   return (
     <Layout>
@@ -49,8 +49,8 @@ const IndexPage: React.FC<PageProps> = ({ location: { search } }) => {
           {randoms.map((num) => (
             <Image
               key={`Home-Coverflow-${num}`}
-              data-to={`/view/${dataJson[num].artist}-${dataJson[num].album}`}
-              src={`music/${num}/0.jpg`}
+              data-to={`/view/${data[num].artist}-${data[num].album}`}
+              src={`music/${data[num].id}/0.jpg`}
             />
           ))}
         </Coverflow>
