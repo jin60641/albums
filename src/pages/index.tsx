@@ -36,6 +36,22 @@ const IndexPage: React.FC<PageProps> = ({ location: { search } }) => {
     }
   }, []), [data, search]);
 
+  const Cards = useMemo(() => data.map(({ artist, album, id }) => (
+    <Card key={`Home-Card-${id}`}>
+      <Link to={`/view/${artist}-${album}`}>
+        <CardImage>
+          <Image src={`music/${id}/0.jpg`} />
+        </CardImage>
+        <CardText>
+          {artist}
+        </CardText>
+        <CardText>
+          {album}
+        </CardText>
+      </Link>
+    </Card>
+  )), [data, search])
+
   return (
     <Layout>
       <SEO title='Home' />
@@ -55,27 +71,7 @@ const IndexPage: React.FC<PageProps> = ({ location: { search } }) => {
           ))}
         </Coverflow>
         <CardWrap>
-          {data.map(({ artist, album, id }) => (
-            <Card key={`Home-Card-${artist}-${album}-${id}`}>
-              <Link
-                to={`/view/${artist}-${album}`}
-              >
-                <CardImage
-                >
-                  <Image
-                    data-to={`/view/${artist}-${album}`}
-                    src={`music/${id}/0.jpg`}
-                  />
-                </CardImage>
-                <CardText>
-                  {artist}
-                </CardText>
-                <CardText>
-                  {album}
-                </CardText>
-              </Link>
-            </Card>
-          ))}
+          {Cards}
         </CardWrap>
     </Layout>
   );
