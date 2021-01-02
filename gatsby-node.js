@@ -4,17 +4,29 @@
  * See: https://www.gatsbyjs.com/docs/node-apis/
  */
 
-// You can delete this file if you're not using it
-//
-//
-const path = require(`path`)
-const { slash } = require(`gatsby-core-utils`)
+const path = require('path')
+const qs = require('qs');
+const { slash } = require('gatsby-core-utils')
 
 const data = require('./src/constants/data.json');
+
+const filter = Object.entries({
+  hasLP: ['TRUE', 'FALSE'],
+  hasCD: ['TRUE', 'FALSE'],
+  country: ['ko', 'jp'],
+});
+
+const recursive = (obj = {}, index = 0) => {
+  if (index === filter.length) {
+    return [obj];
+  }
+  const [key, values] = filter[index];
+  return values.reduce((arr, value) => arr.concat(recursive({ ...obj, [key]: value }, index + 1)), []);
+}
+
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
-  // query content for WordPress posts
-  const template = path.resolve(`./src/templates/View.tsx`)
+  const viewTemplate = path.resolve('./src/templates/View.tsx');
   
   data.forEach(({
     artist,
@@ -22,12 +34,8 @@ exports.createPages = async ({ graphql, actions }) => {
     photoCount,
   }, rowId) => {
     createPage({
-      // will be the url for the page
-      path: "/view/" + `${artist}-${album}`,
-      // specify the component template of your choice
-      component: slash(template),
-      // In the ^template's GraphQL query, 'id' will be available
-      // as a GraphQL variable to query for this posts's data.
+      path: `/view/${artist}-${album}`,
+      component: slash(viewTemplate),
       context: {
         artist,
         album,
@@ -36,4 +44,13 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     })
   })
+  const mainTemplate = path.resolve('./src/pages/index.tsx');
+  console.log(recursive());
+  recursive().forEach(query => {
+    createPage({
+      path: `/main/${qs.stringify(query)}`,
+      component: slash(mainTemplate),
+      context: query,
+    })
+  });
 }

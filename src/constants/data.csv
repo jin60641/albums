@@ -1,0 +1,143 @@
+id,artist,album,photoCount,country,hasLP,hasCD
+0,부활,Rock Will Never Die,4,ko,TRUE,FALSE
+1,들국화,들국화,4,ko,TRUE,FALSE
+2,김현식,3집,4,ko,TRUE,FALSE
+3,이문세,3집,4,ko,TRUE,FALSE
+4,술탄 오브 더 디스코,Aliens,7,ko,TRUE,FALSE
+5,이문세,5집,4,ko,TRUE,FALSE
+6,김현식,6집,4,ko,TRUE,FALSE
+7,원준희,사랑은 유리같은 것,4,ko,TRUE,FALSE
+8,Righteous Brothers,Ghost OST,4,en,TRUE,FALSE
+9,Mariah Carey,Merry Christmas,4,en,TRUE,FALSE
+10,竹内まりや,ヴァラエティ,5,jp,TRUE,FALSE
+11,くるり,図鑑,5,jp,TRUE,FALSE
+12,RADWIMPS,天気の子,5,jp,TRUE,FALSE
+13,iri,Shade,4,jp,TRUE,FALSE
+14,kiki vivi lily × SUKISHA,Over the Rainbow,4,jp,TRUE,FALSE
+15,혁오,22,4,ko,TRUE,FALSE
+16,이문세,7집,4,ko,TRUE,FALSE
+17,SIRUP,LOOP,5,jp,TRUE,FALSE
+18,back number,アンコ-ル,4,jp,TRUE,FALSE
+19,kirinji,killer tune kills me,4,jp,TRUE,FALSE
+20,쏜애플,난 자꾸 말을 더듬고 잠드는 법도 잊었네,5,ko,TRUE,TRUE
+21,쏜애플,이상기후,5,ko,TRUE,TRUE
+22,米津玄師,BOOTLEG,9,jp,TRUE,TRUE
+23,쏜애플,서울병,8,ko,TRUE,TRUE
+24,RADWIMPS,君の名は。,5,jp,TRUE,FALSE
+25,쏜애플,계몽,4,ko,TRUE,TRUE
+26,Eve,文化,5,jp,FALSE,TRUE
+27,ヒトリエ,ワンミーツハー,3,jp,FALSE,TRUE
+28,ヒトリエ,センスレス・ワンダー,4,jp,FALSE,TRUE
+29,Lucky Kilimanjaro,Do Do Do,4,jp,FALSE,TRUE
+30,ヒトリエ,HOWLS,5,jp,FALSE,TRUE
+31,あいみょん,tamago,4,jp,FALSE,TRUE
+32,中村佳穂,AINOU,5,jp,FALSE,TRUE
+33,あいみょん,青春のエキサイトメント,6,jp,FALSE,TRUE
+34,산울림,2집,4,ko,TRUE,FALSE
+35,ヒトリエ,イマジナリー・モノフィクション,6,jp,FALSE,TRUE
+36,ヒトリエ,モノクロノ・エントランス,4,jp,FALSE,TRUE
+37,神山羊,しあわせなおとな,4,jp,FALSE,TRUE
+38,神山羊,ゆめみるこども,4,jp,FALSE,TRUE
+39,あいみょん,空の青さを知る人よ,6,jp,FALSE,TRUE
+40,ヒトリエ,ルームシック・ガールズエスケープ／non-fiction four e.p.,4,jp,FALSE,TRUE
+41,ハチ,OFFICAL ORANGE,4,jp,FALSE,TRUE
+42,あいみょん,ハルノヒ,5,jp,FALSE,TRUE
+43,あいみょん,マリゴールド,6,jp,FALSE,TRUE
+44,ヒトリエ,ワンミーツハー,4,jp,FALSE,TRUE
+45,あいみょん,満月の夜なら,4,jp,FALSE,TRUE
+46,あいみょん,君はロックを聞かない,6,jp,FALSE,TRUE
+47,あいみょん,瞬間的シックスセンス,6,jp,FALSE,TRUE
+48,ヒトリエ,IKI,6,jp,FALSE,TRUE
+49,ヒトリエ,WONDER and WONDER,7,jp,FALSE,TRUE
+50,あいみょん,今夜このまま,6,jp,FALSE,TRUE
+51,WANIMA,Good Job!!,4,jp,FALSE,TRUE
+52,あいみょん,真夏の夜の匂いがする,6,jp,FALSE,TRUE
+53,あいみょん,生きていたんだよな,4,jp,FALSE,TRUE
+54,ヒトリエ,Ai/Solate,5,jp,FALSE,TRUE
+55,あいみょん,憎まれっ子世に憚る,4,jp,FALSE,TRUE
+56,Lucky Kilimanjaro,HUG,4,jp,FALSE,TRUE
+57,Lucky Kilimanjaro,Favorite Fantasy,4,jp,FALSE,TRUE
+58,Lucky Kilimanjaro,FRESH,4,jp,FALSE,TRUE
+59,Lucky Kilimanjaro,初恋,4,jp,FALSE,TRUE
+60,Lucky Kilimanjaro,FULLCOLOR,4,jp,FALSE,TRUE
+61,Lucky Kilimanjaro,風になる,4,jp,FALSE,TRUE
+62,Eve × Sou,蒼,6,jp,FALSE,TRUE
+63,Eve,Round Robin,4,jp,FALSE,TRUE
+64,Eve,おとぎ,7,jp,FALSE,TRUE
+65,米津玄師,アンビリーバーズ,5,jp,FALSE,TRUE
+66,米津玄師,Lemon,4,jp,FALSE,TRUE
+67,米津玄師,Flamingo,6,jp,FALSE,TRUE
+68,米津玄師,Flowerwall,5,jp,FALSE,TRUE
+69,米津玄師,MAD HEAD LOVE / ポッピンアパシー,6,jp,FALSE,TRUE
+70,米津玄師,diorama,7,jp,FALSE,TRUE
+71,米津玄師,orion,4,jp,FALSE,TRUE
+72,キタニタツヤ,Seven Girls’ H(e)avens,5,jp,FALSE,TRUE
+73,ヒトリエ,DEEPER,6,jp,FALSE,TRUE
+74,ヒトリエ,シャッタードール,4,jp,FALSE,TRUE
+75,ヒトリエ,ポラリス,6,jp,FALSE,TRUE
+76,米津玄師,ピースサイン,8,jp,FALSE,TRUE
+77,米津玄師,TEENAGE RIOT,6,jp,FALSE,TRUE
+78,米津玄師,馬と鹿,5,jp,FALSE,TRUE
+79,米津玄師,かいじゅうずかん,5,jp,FALSE,TRUE
+80,あいみょん,愛を伝えたいだとか,7,jp,TRUE,TRUE
+81,米津玄師,パプリカ,5,jp,FALSE,TRUE
+82,須田景凪,teeter,4,jp,FALSE,TRUE
+83,米津玄師,サンタマリア,4,jp,FALSE,TRUE
+84,米津玄師,LOSER,9,jp,FALSE,TRUE
+85,米津玄師,Bremen,4,jp,FALSE,TRUE
+86,米津玄師,STRAY SHEEP,8,jp,FALSE,TRUE
+87,ずっと真夜中でいいのに。,潜潜話,3,jp,FALSE,TRUE
+88,ずっと真夜中でいいのに。,正しい偽りからの起床,3,jp,FALSE,TRUE
+89,ずっと真夜中でいいのに。,今は今で誓いは笑みで,3,jp,FALSE,TRUE
+90,米津玄師,YANKEE,6,jp,FALSE,TRUE
+91,이용,1집,4,ko,TRUE,FALSE
+92,혁오,20,4,ko,TRUE,FALSE
+93,버스커버스커,1집,4,ko,TRUE,FALSE
+94,나미,변신,3,ko,TRUE,FALSE
+95,임재범,이 밤이 지나면,4,ko,TRUE,FALSE
+96,산울림,10집,4,ko,TRUE,FALSE
+97,村松崇継,メアリと魔女の花 OST,4,jp,TRUE,FALSE
+98,조용필,Hello,5,ko,TRUE,FALSE
+99,井上陽水,断絶,5,jp,TRUE,FALSE
+100,유재하,사랑하기 때문에,4,ko,TRUE,FALSE
+101,井上陽水,氷の世界,5,jp,TRUE,FALSE
+102,井上陽水,9.5カラット,4,jp,TRUE,FALSE
+103,안치환,안치환 앤솔로지,5,ko,TRUE,FALSE
+104,윤상,1집,4,ko,TRUE,FALSE
+105,강수지,보라빛 향기,4,ko,TRUE,FALSE
+106,Rock in Korea,Rock in Korea 1,4,ko,TRUE,FALSE
+107,노래를 찾는 사람들,2집,4,ko,TRUE,FALSE
+108,이문세,5집,4,ko,TRUE,FALSE
+109,변진섭,2집,4,ko,TRUE,FALSE
+110,ハチ,花束と水葬,4,jp,FALSE,TRUE
+111,King Gnu,Sympa,1,jp,TRUE,FALSE
+112,King Gnu,CEREMONY,1,jp,TRUE,FALSE
+113,Vaundy,strobo,1,jp,TRUE,FALSE
+114,〈物語〉シリーズ,歌物語,4,jp,TRUE,FALSE
+115,KIRINJI,cherish,1,jp,TRUE,FALSE
+116,Claris,Single Best 1st,1,jp,TRUE,FALSE
+117,[Alexandros],Sleepless in Brooklyn,1,jp,TRUE,FALSE
+118,Base Ball Bear,光源,1,jp,TRUE,FALSE
+119,土岐麻子,PASSION BLUE,1,jp,TRUE,FALSE
+120,ASIAN KUNG-FU GENERATION,ソルファ,1,jp,TRUE,FALSE
+121,인희,다이너마이트 소녀 / 가지마,1,ko,TRUE,FALSE
+122,이은미,베스트 컬렉션,1,ko,TRUE,FALSE
+123,이은미,Portrait,1,ko,TRUE,FALSE
+124,坂本龍一,Merry Christmas Mr.Lawrence OST,1,jp,TRUE,FALSE
+125,창모,Boyhood,1,ko,TRUE,FALSE
+126,back number,シャンデリア,1,jp,TRUE,FALSE
+127,ずっと真夜中でいいのに。,ぐされ,1,jp,FALSE,TRUE
+128,椎名林檎,無罪モラトリアム,1,jp,TRUE,FALSE
+129,椎名林檎,逆輸入~航空局~,1,jp,TRUE,FALSE
+130,King Gnu,Tokyo Rendez-Vous,1,jp,TRUE,FALSE
+131,マカロニえんぴつ,Hope,1,jp,TRUE,FALSE
+132,マカロニえんぴつ,CHOSYOKU,1,jp,TRUE,FALSE
+133,패닉,3집,1,ko,TRUE,FALSE
+134,plenty,いのちのかたち,1,jp,TRUE,FALSE
+135,plenty,It Could Be Home,1,jp,TRUE,FALSE
+136,宇多田ヒカル,One Last Kiss,1,jp,TRUE,FALSE
+137,LiSA,紅蓮華/炎,1,jp,TRUE,FALSE
+138,Evangelion,Evangelion Finally,1,jp,TRUE,FALSE
+139,민수,민수는 혼란 스럽다 / 커다란,1,ko,TRUE,FALSE
+140,indigo la end,夜行秘密,1,jp,TRUE,FALSE
+141,SEATBELTS,Cowboy Bebop,1,jp,TRUE,FALSE

@@ -1,8 +1,6 @@
 import React, { useMemo, useCallback, useEffect } from 'react';
 
-import qs from 'query-string';
 import styled from 'styled-components';
-import { PageProps } from 'gatsby';
 
 import Coverflow from '../components/Coverflow';
 import Image from '../components/Image';
@@ -13,20 +11,23 @@ import dataJson from '../constants/data.json';
 
 const INDEX = 10;
 
-const IndexPage: React.FC<PageProps> = ({ location: { search } }) => {
-  const data = useMemo(() => {
-    if (!search.length) {
-      return dataJson;
-    }
-    const query = qs.parse(search);
-    return dataJson.filter(row => 
-      Object.entries(query).every(([key, value]) => (
-        `${row[key as keyof typeof row]}` === value
-      ))
-    );
-  }, [search]);
+interface Props {
+  pageContext?: {
+    country?: string,
+    hasLP?: string,
+    hasCD?: string,
+  }
+}
 
-  const randoms = useMemo<number[]>(() => Array.from(Array(INDEX)).reduce((arr, _, i) => {
+const MainPage: React.FC<Props> = ({ pageContext: { country, hasLP, hasCD } = {} }) => {
+  const query = useMemo(() => ({ country, hasLP, hasCD }), [country, hasLP, hasCD]);
+  const data = useMemo(() => dataJson
+    .filter(row => Object.entries(query).every(([key, value]) => value !== undefined ? (
+      `${row[key as keyof typeof row]}` === value
+    ) : true))
+  , [query]);
+
+  const randoms = useMemo<number[]>(() => Array.from(Array(Math.min(data.length, INDEX))).reduce((arr, _, i) => {
     while (true) {
       const num = Math.floor(Math.random() * data.length);
       if (!arr.includes(num)) {
@@ -34,7 +35,7 @@ const IndexPage: React.FC<PageProps> = ({ location: { search } }) => {
         return arr;
       }
     }
-  }, []), [data, search]);
+  }, []), [data]);
 
   const Cards = useMemo(() => data.map(({ artist, album, id }) => (
     <Card key={`Home-Card-${id}`}>
@@ -50,11 +51,12 @@ const IndexPage: React.FC<PageProps> = ({ location: { search } }) => {
         </CardText>
       </Link>
     </Card>
-  )), [data, search])
+  )), [data])
 
   return (
     <Layout>
       <SEO title='Home' />
+      {data.length === dataJson.length && (
         <Coverflow
           displayQuantityOfSide={2}
           active={5}
@@ -70,9 +72,10 @@ const IndexPage: React.FC<PageProps> = ({ location: { search } }) => {
             />
           ))}
         </Coverflow>
-        <CardWrap>
-          {Cards}
-        </CardWrap>
+      )}
+      <CardWrap>
+        {Cards}
+      </CardWrap>
     </Layout>
   );
 };
@@ -136,4 +139,4 @@ const CardText = styled.span`
   overflow-x: hidden;
 `;
 
-export default IndexPage;
+export default MainPage;
