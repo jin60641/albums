@@ -11,9 +11,9 @@ const { slash } = require('gatsby-core-utils')
 const data = require('./src/constants/data.json');
 
 const filter = Object.entries({
-  hasLP: ['TRUE', 'FALSE'],
-  hasCD: ['TRUE', 'FALSE'],
-  country: ['ko', 'jp'],
+  hasLP: ['TRUE', 'FALSE', ''],
+  hasCD: ['TRUE', 'FALSE', ''],
+  country: ['ko', 'jp', ''],
 });
 
 const recursive = (obj = {}, index = 0) => {
@@ -21,7 +21,7 @@ const recursive = (obj = {}, index = 0) => {
     return [obj];
   }
   const [key, values] = filter[index];
-  return values.reduce((arr, value) => arr.concat(recursive({ ...obj, [key]: value }, index + 1)), []);
+  return values.reduce((arr, value) => arr.concat(recursive(value ? { ...obj, [key]: value } : obj, index + 1)), []);
 }
 
 exports.createPages = async ({ graphql, actions }) => {
@@ -45,7 +45,6 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
   const mainTemplate = path.resolve('./src/pages/index.tsx');
-  console.log(recursive());
   recursive().forEach(query => {
     createPage({
       path: `/main/${qs.stringify(query)}`,

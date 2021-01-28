@@ -18,7 +18,7 @@ id,artist,album,photoCount,country,hasLP,hasCD
 16,이문세,7집,4,ko,TRUE,FALSE
 17,SIRUP,LOOP,5,jp,TRUE,FALSE
 18,back number,アンコ-ル,4,jp,TRUE,FALSE
-19,kirinji,killer tune kills me,4,jp,TRUE,FALSE
+19,Chet Baker,Sings,1,en,TRUE,FALSE
 20,쏜애플,난 자꾸 말을 더듬고 잠드는 법도 잊었네,5,ko,TRUE,TRUE
 21,쏜애플,이상기후,5,ko,TRUE,TRUE
 22,米津玄師,BOOTLEG,9,jp,TRUE,TRUE
@@ -141,3 +141,17 @@ id,artist,album,photoCount,country,hasLP,hasCD
 139,민수,민수는 혼란 스럽다 / 커다란,1,ko,TRUE,FALSE
 140,indigo la end,夜行秘密,1,jp,TRUE,FALSE
 141,SEATBELTS,Cowboy Bebop,1,jp,TRUE,FALSE
+142,KIRINJI,Melancholy Mellow I -甘い憂鬱-19982002,1,jp,TRUE,FALSE
+143,KIRINJI,Melancholy Mellow II -甘い憂鬱-20032013,1,jp,TRUE,FALSE
+144,Nulbarich,Guess Who?,1,jp,TRUE,FALSE
+145,ペトロールズ,Renaissance,1,jp,FALSE,TRUE
+146,ゲスの極み乙女。,ストリーミング、CD、レコード,1,jp,TRUE,FALSE
+147,空音,Fantasy Club,1,jp,TRUE,FALSE
+148,いきものがかり,レコー丼~超七色大盛り~,1,jp,TRUE,FALSE
+149,never young beach,fam fam,1,jp,TRUE,FALSE
+150,015B,2집,1,ko,TRUE,FALSE
+151,동물원,2집,1,ko,TRUE,FALSE
+152,MBC 대학가요제,88 MBC 대학가요제,1,ko,TRUE,FALSE
+153,MBC 대학가요제,MBC 대학가요제 골든베스트,1,ko,TRUE,FALSE
+154,델리스파이스,Espresso,1,ko,TRUE,FALSE
+155,이적,2집,1,ko,TRUE,FALSE
