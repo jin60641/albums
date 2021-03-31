@@ -1,4 +1,4 @@
-import React, { useMemo, useCallback, useEffect } from 'react';
+import React, { useMemo } from 'react';
 
 import styled from 'styled-components';
 
@@ -22,20 +22,22 @@ interface Props {
 const MainPage: React.FC<Props> = ({ pageContext: { country, hasLP, hasCD } = {} }) => {
   const query = useMemo(() => ({ country, hasLP, hasCD }), [country, hasLP, hasCD]);
   const data = useMemo(() => dataJson
-    .filter(row => Object.entries(query).every(([key, value]) => value !== undefined ? (
+    .filter((row) => Object.entries(query).every(([key, value]) => (value !== undefined ? (
       `${row[key as keyof typeof row]}` === value
-    ) : true))
-  , [query]);
+    ) : true))),
+  [query]);
 
-  const randoms = useMemo<number[]>(() => Array.from(Array(Math.min(data.length, INDEX))).reduce((arr, _, i) => {
-    while (true) {
+  const randoms = useMemo<number[]>(() => {
+    const len = Math.min(data.length, INDEX);
+    const arr: number[] = [];
+    while (arr.length < len) {
       const num = Math.floor(Math.random() * data.length);
       if (!arr.includes(num)) {
-        arr[i] = num;
-        return arr;
+        arr.push(num);
       }
     }
-  }, []), [data]);
+    return arr;
+  }, [data]);
 
   const Cards = useMemo(() => data.map(({ artist, album, id }) => (
     <Card key={`Home-Card-${id}`}>
@@ -51,7 +53,7 @@ const MainPage: React.FC<Props> = ({ pageContext: { country, hasLP, hasCD } = {}
         </CardText>
       </Link>
     </Card>
-  )), [data])
+  )), [data]);
 
   return (
     <Layout>

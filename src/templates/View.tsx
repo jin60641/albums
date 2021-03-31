@@ -20,10 +20,12 @@ const SecondPage: React.FC<Props> = ({ pageContext: { artist, album, rowId, phot
   <Layout>
     <SEO
       title={`${artist} - ${album}`}
+      // eslint-disable-next-line
       image={require(`../images/music/${rowId}/0.jpg`)}
     />
     {Array.from(Array(photoCount)).map((_, i) => (i === 0 ? (
       <div
+        // eslint-disable-next-line react/no-array-index-key
         key={`View-${rowId}-${i}`}
         style={{
           maxWidth: 600,
@@ -36,9 +38,14 @@ const SecondPage: React.FC<Props> = ({ pageContext: { artist, album, rowId, phot
       </div>
     ) : (
       <div
+        // eslint-disable-next-line react/no-array-index-key
         key={`View-${rowId}-${i}`}
       >
-        <img src={require(`../images/music/${rowId}/${i}.jpg`)} />
+        <img
+          // eslint-disable-next-line
+          src={require(`../images/music/${rowId}/${i}.jpg`)}
+          alt={`${rowId}-${i}`}
+        />
       </div>
     )))}
     <Link to={isWindow ? ((window as any).previousPath || '/') : '/'}>

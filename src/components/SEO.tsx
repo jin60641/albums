@@ -24,7 +24,6 @@ const SEO: React.FC<Props> = ({
   title,
   image = '/images/og.jpg',
 }) => {
-
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -88,6 +87,6 @@ const SEO: React.FC<Props> = ({
       ]}
     />
   );
-}
+};
 
 export default SEO;
