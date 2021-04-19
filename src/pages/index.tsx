@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 
 import Coverflow from '../components/Coverflow';
 import Image from '../components/Image';
@@ -8,37 +8,31 @@ import Layout from '../components/Layout';
 import Link from '../components/Link';
 import SEO from '../components/SEO';
 import dataJson from '../constants/data.json';
+import { Data } from '../constants/types';
 
-const INDEX = 10;
-
-interface Props {
-  pageContext?: {
-    country?: string,
-    hasLP?: string,
-    hasCD?: string,
-  }
+interface PageContext {
+  data: Data[],
 }
 
-const MainPage: React.FC<Props> = ({ pageContext: { country, hasLP, hasCD } = {} }) => {
-  const query = useMemo(() => ({ country, hasLP, hasCD }), [country, hasLP, hasCD]);
-  const data = useMemo(() => dataJson
-    .filter((row) => Object.entries(query).every(([key, value]) => (value !== undefined ? (
-      `${row[key as keyof typeof row]}` === value
-    ) : true))),
-  [query]);
+interface Props {
+  pageContext: PageContext,
+}
 
-  const randoms = useMemo<number[]>(() => {
-    const len = Math.min(data.length, INDEX);
-    const arr: number[] = [];
-    while (arr.length < len) {
-      const num = Math.floor(Math.random() * data.length);
-      if (!arr.includes(num)) {
-        arr.push(num);
-      }
+const getDefaultRandoms = () => {
+  const len = Math.min(dataJson.length, 10);
+  const arr: number[] = [];
+  while (arr.length < len) {
+    const num = Math.floor(Math.random() * dataJson.length);
+    if (!arr.includes(num)) {
+      arr.push(num);
     }
-    return arr;
-  }, [data]);
+  }
+  return arr;
+};
 
+const randoms = getDefaultRandoms();
+
+const MainPage: React.FC<Props> = ({ pageContext: { data = dataJson as Data[] } }) => {
   const Cards = useMemo(() => data.map(({ artist, album, id }) => (
     <Card key={`Home-Card-${id}`}>
       <Link to={`/view/${artist}-${album}`}>

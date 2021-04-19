@@ -8,7 +8,7 @@ const path = require('path')
 const qs = require('qs');
 const { slash } = require('gatsby-core-utils')
 
-const data = require('./src/constants/data.json');
+const dataJson = require('./src/constants/data.json');
 
 const filter = Object.entries({
   hasLP: ['TRUE', 'FALSE', ''],
@@ -28,7 +28,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const viewTemplate = path.resolve('./src/templates/View.tsx');
   
-  data.forEach(({
+  dataJson.forEach(({
     artist,
     album,
     photoCount,
@@ -46,10 +46,17 @@ exports.createPages = async ({ graphql, actions }) => {
   })
   const mainTemplate = path.resolve('./src/pages/index.tsx');
   recursive().forEach(query => {
+    const data = dataJson
+      .filter((row) => Object.entries(query).every(([key, value]) => (value !== undefined ? (
+        `${row[key]}` === value
+      ) : true)));
+
     createPage({
       path: `/main/${qs.stringify(query)}`,
       component: slash(mainTemplate),
-      context: query,
+      context: {
+        data,
+      },
     })
   });
 }

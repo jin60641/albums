@@ -15,7 +15,7 @@ jobs:
     - name: setup node
       uses: actions/setup-node@v1
       with:
-        node-version: '10.x'
+        node-version: '14.x'
 
     # Run the build script which populates the ./dist folder
     - name: build

@@ -21,7 +21,7 @@ const SecondPage: React.FC<Props> = ({ pageContext: { artist, album, rowId, phot
     <SEO
       title={`${artist} - ${album}`}
       // eslint-disable-next-line
-      image={require(`../images/music/${rowId}/0.jpg`)}
+      image={require(`../images/music/${rowId}/0.jpg`).default}
     />
     {Array.from(Array(photoCount)).map((_, i) => (i === 0 ? (
       <div
@@ -43,7 +43,7 @@ const SecondPage: React.FC<Props> = ({ pageContext: { artist, album, rowId, phot
       >
         <img
           // eslint-disable-next-line
-          src={require(`../images/music/${rowId}/${i}.jpg`)}
+          src={require(`../images/music/${rowId}/${i}.jpg`).default}
           alt={`${rowId}-${i}`}
         />
       </div>
