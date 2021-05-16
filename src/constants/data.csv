@@ -92,7 +92,7 @@ id,artist,album,photoCount,country,hasLP,hasCD
 90,米津玄師,YANKEE,6,jp,FALSE,TRUE
 91,이용,1집,4,ko,TRUE,FALSE
 92,혁오,20,4,ko,TRUE,FALSE
-93,버스커버스커,1집,4,ko,TRUE,FALSE
+93,버스커버스커,1집 + 1집 마무리,4,ko,TRUE,FALSE
 94,나미,변신,3,ko,TRUE,FALSE
 95,임재범,이 밤이 지나면,4,ko,TRUE,FALSE
 96,산울림,10집,4,ko,TRUE,FALSE
@@ -123,7 +123,7 @@ id,artist,album,photoCount,country,hasLP,hasCD
 121,인희,다이너마이트 소녀 / 가지마,1,ko,TRUE,FALSE
 122,이은미,베스트 컬렉션,1,ko,TRUE,FALSE
 123,이은미,Portrait,1,ko,TRUE,FALSE
-124,坂本龍一,Merry Christmas Mr.Lawrence OST,1,jp,TRUE,FALSE
+124,坂本龍一,Music For Film,1,jp,TRUE,FALSE
 125,창모,Boyhood,1,ko,TRUE,FALSE
 126,back number,シャンデリア,1,jp,TRUE,FALSE
 127,ずっと真夜中でいいのに。,ぐされ,1,jp,TRUE,FALSE
@@ -173,3 +173,21 @@ id,artist,album,photoCount,country,hasLP,hasCD
 171,태양,Rise,1,ko,TRUE,FALSE
 172,Aimer,Walpurgis,1,jp,TRUE,FALSE
 173,鬼滅の刃,鬼滅の刃,1,jp,TRUE,FALSE
+174,마로니에,3집,1,ko,TRUE,FALSE
+175,투투,일과 이분의 일,1,ko,TRUE,FALSE
+176,BTS,Dynamite,1,ko,TRUE,FALSE
+177,blackbear,everything means nothing,1,en,TRUE,FALSE
+178,버즈,The Best Of Buzz,1,ko,TRUE,FALSE
+179,카니발,1집 그땐 그랬지,1,ko,TRUE,FALSE
+180,Lauv,~how i'm feeling~,1,en,TRUE,FALSE
+181,모트,Re:,1,ko,TRUE,FALSE
+182,레인보우노트,Rainbow note,1,ko,TRUE,FALSE
+183,Don't Panic,Digging Play:te vol.4,1,ko,TRUE,FALSE
+184,노무현,"그 사람, 노무현",1,ko,TRUE,FALSE
+185,김동률,monologue,1,ko,TRUE,FALSE
+186,Lucky Tapes,BLUE feat. kojikoji,1,jp,TRUE,FALSE
+187,米津玄師,Pale Blue,1,jp,FALSE,TRUE
+188,millenium parade,THE MILLENNIUM PARADE,1,jp,TRUE,FALSE
+189,藤井風,HELP EVER HURT NEVER,1,jp,TRUE,FALSE
+190,Cody・Lee(李),我愛你 / drizzle,1,jp,TRUE,FALSE
+191,クリープハイプ,キケンナアソビ,1,jp,TRUE,FALSE
